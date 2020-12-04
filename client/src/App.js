@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import Login from './components/Login';
 import GasPrices from './components/GasPrices';
+import PrivateRoute from './components/PrivateRoute';
 
 import axios from 'axios';
 
 function App() {
   const logout = () => {
-    
+
   };
 
 
