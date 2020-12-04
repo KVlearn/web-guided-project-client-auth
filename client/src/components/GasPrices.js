@@ -20,6 +20,7 @@ class GasPrices extends React.Component {
         this.setState({
           gasPrices: res.data.data.filter(
             price => {
+              console.log('bk: price: ', price)
               price.type === 'Gasoline - Regular' &&
                 (price.location === 'US' || price.location === 'State of Hawaii')
             }
