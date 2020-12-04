@@ -26,7 +26,7 @@ class Login extends React.Component {
         this.props.history.push('/protected')
       })
       .catch(err => {
-        console.error(err);
+        console.error(err.response);
       })
   };
 
