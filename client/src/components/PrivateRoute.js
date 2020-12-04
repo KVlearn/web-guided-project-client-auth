@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Route from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
-const PrivateRoute = ({ component: Component, ...props }) => {
-  console.log('bk: props,Component: ', props, Component);
-  return <Route component={Component} {...props} />
+const PrivateRoute = ({ ...props }) => {
+  return <Route {...props} />
 }
 
 export default PrivateRoute;
