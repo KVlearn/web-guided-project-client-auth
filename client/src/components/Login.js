@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 class Login extends React.Component {
   state = {
@@ -18,8 +18,20 @@ class Login extends React.Component {
     });
   };
 
+  //1.connect to server with  username/password
+  //2.store token that gets passed on successful login
+  //3.output error when not successful
+
   login = e => {
     e.preventDefault();
+    //login to server
+    axiosWithAuth().post('/login',this.state.credentials)
+    .then(res=>{
+      console.log('res=',res)
+      window.localStorage.setItem('token',res.data.payload);
+      this.props.history.push('/protected')
+    })
+    .catch(err=> console.log('err',err.response))
   };
 
   render() {
